@@ -1,0 +1,1 @@
+# MiCADO alert-generator component
