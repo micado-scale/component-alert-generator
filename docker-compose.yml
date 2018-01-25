@@ -1,0 +1,22 @@
+version: '3.3'
+
+# Dev parameters
+services:
+   generator:
+     image: alert-generator
+     container_name: alert-generator
+     volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./:/etc/prometheus"
+      - "./:/var/lib/micado/alert-generator/"
+     environment:
+      CONTAINER_SCALING_FILE: /var/lib/micado/alert-generator/scaling_policy.yaml
+      ALERTS_FILE_PATH: /etc/prometheus/
+      AUTO_GENERATE_ALERT: 'True'
+      DEFAULT_SCALEUP: 90
+      DEFAULT_SCALEDOWN: 10
+      PROMETHEUS: localhost
+     #command: python /opt/generator.py
+     command: /bin/bash
+     stdin_open: true
+     tty: true

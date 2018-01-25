@@ -1,0 +1,7 @@
+**/.git*
+**/README.md
+**/ISSUE_TEMPLATE.md
+**/*.pyc
+**/*.swp
+**/.idea
+**/docker-compose.yml
