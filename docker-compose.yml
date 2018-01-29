@@ -7,7 +7,7 @@ services:
      container_name: alert-generator
      volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "./:/etc/prometheus"
+      - "./:/etc/prometheus/"
       - "./:/var/lib/micado/alert-generator/"
      environment:
       CONTAINER_SCALING_FILE: /var/lib/micado/alert-generator/scaling_policy.yaml
