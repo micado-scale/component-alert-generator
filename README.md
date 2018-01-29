@@ -4,7 +4,9 @@ This component used to generate Prometheus rules for scaling docker services sin
 
 # Usage
 
-1. The generator can be configured through this environment variables:
+The generator can be configured through environment variables and uses docker volumes.
+
+## ENV
 
 * CONTAINER_SCALING_FILE: /var/lib/micado/alert-generator/scaling_policy.yaml
 Set the path of the scaling_policy.yaml file inside the container.
@@ -24,7 +26,9 @@ The scale down parameter for the auto generated rules if AUTO_GENERATE_ALERT is 
 * PROMETHEUS: localhost
 The address of Prometheus.
 
-1. The generator needs the following volumes:
+## Volumes 
+
+The generator needs the following volumes:
 
 * /var/run/docker.sock:/var/run/docker.sock
 The host docker socket for list docker services.
